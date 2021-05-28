@@ -32,7 +32,9 @@
     "@dashkite/amen-console": "^0.0.1",
     "@dashkite/genie": "^0.4.1",
     "@dashkite/genie-presets": "^0.1.12",
-    "@dashkite/joy": "^0.3.6",
     "coffeescript": "^2.5.1"
+  },
+  "dependencies": {
+    "@dashkite/joy": "^0.3.6"
   }
 }
