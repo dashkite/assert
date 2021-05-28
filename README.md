@@ -13,9 +13,9 @@ assert.rejects -> Promise.reject "oh no"
 ## Features
 
 - ESM friendly
-- Lightweight
+- Lightweight (1.3kB in the browser)
 - Curryable
-- Plain `assert` uses strict equality
+- Plain `assert` takes only `true` — no “truth” values
 
 ## Install
 
