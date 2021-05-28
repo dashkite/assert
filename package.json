@@ -7,10 +7,6 @@
     ".": {
       "import": "./build/import/src/index.js",
       "node": "./build/node/src/index.js"
-    },
-    "./*": {
-      "import": "./build/import/src/*.js",
-      "node": "./build/node/src/*.js"
     }
   },
   "files": [
@@ -32,10 +28,11 @@
   },
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
-    "@dashkite/genie": "^0.3.3",
-    "@dashkite/genie-presets": "^0.1.1",
-    "@dashkite/joy": "^0.3.0",
-    "amen": "^3.0.0",
+    "@dashkite/amen": "^0.1.2",
+    "@dashkite/amen-console": "^0.0.1",
+    "@dashkite/genie": "^0.4.1",
+    "@dashkite/genie-presets": "^0.1.12",
+    "@dashkite/joy": "^0.3.6",
     "coffeescript": "^2.5.1"
   }
 }
