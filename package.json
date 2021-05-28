@@ -1,7 +1,7 @@
 {
-  "name": "@dashkite/module",
+  "name": "@dashkite/assert",
   "version": "0.0.0",
-  "description": "",
+  "description": "Lightweight browser-friendly Javascript assertions.",
   "main": "build/node/src/index.js",
   "exports": {
     ".": {
