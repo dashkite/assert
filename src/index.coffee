@@ -1,32 +1,44 @@
 import * as _ from "@dashkite/joy"
 
-rx =
+px =
+
   equal: eq = (a, b) -> a == b
+  notEqual: _.negate eq
+
   deepEqual: _.equal
+  notDeepEqual: _.negate _.equal
 
-predicate = (why, f) ->
-  (a, b) -> if f a, b then true else throw new Error why
+  throws: throws = (f) ->
+    try
+      f()
+    catch
+      return true
+    false
 
-assert = (x) ->
-  if x then true else throw new Error "assertion failed"
+  doesNotThrow: _.negate throws
 
-for name, f of rx
-  assert[ name ] = predicate "assertion #{name} failed", f
-  notName =  "not#{_.capitalize name}"
-  assert[ notName ] = predicate  "assertion #{notName} failed", _.negate f
+qx =
 
-assert.throws = (why, f) ->
-  try
-    f()
-    throw new Error why
-  catch
-    true
+  rejects: rejects = (f) ->
+    try
+      await f()
+    catch error
+      return true
+    false
 
-assert.rejects = (why, f) ->
-  try
-    await f()
-    throw new Error why
-  catch
-    true
+  doesNotReject: (f) -> ! await rejects f
+
+assert = (x, why = "assertion failed") ->
+  if x == true then true else throw new Error why
+
+for name, f of px
+  do (name, f) ->
+    assert[ name ] = _.curry _.arity f.length,
+      (ax...) -> assert (_.apply f, ax), "assertion #{name} failed"
+
+for name, f of qx
+  do (name, f) ->
+    assert[ name ] = _.curry _.arity f.length,
+      (ax...) -> assert (await _.apply f, ax), "assertion #{name} failed"
 
 export default assert

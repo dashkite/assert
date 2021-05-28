@@ -39,17 +39,18 @@ do ->
         throw new Error "this should throw"
       try
         assert.throws ->
-        throw new Error "should throw"
       catch
-        true
+        return true
+      throw new Error "should throw"
 
     test "rejects", ->
-      assert.rejects -> Promise.reject false
+      await assert.rejects -> Promise.reject false
+      await assert.doesNotReject -> Promise.resolve true
       try
-        assert.rejects -> Promise.resolve true
-        throw new Error "should throw"
-      catch
-        true
+        await assert.rejects -> Promise.resolve true
+      catch error
+        return true
+      throw new Error "should throw"
 
 
 
