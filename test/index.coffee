@@ -26,6 +26,7 @@ do ->
     test "deepEqual", ->
       assert.notEqual [ 1..5 ], [ 1..5 ]
       assert.deepEqual [ 1..5 ], [ 1..5 ]
+      assert.deepEqual { x: 1, y: 2 }, { y: 2, x: 1 }
       assert.throws ->
         assert.deepEqual [ 1..5 ], [ 1..3 ]
 
