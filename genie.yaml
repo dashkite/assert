@@ -3,6 +3,7 @@ presets:
   update: null
   release: null
   esm: null
+  keywords: null
   coffeescript:
     targets:
       browser:
@@ -18,8 +19,3 @@ presets:
           glob:
             - test/**/*.coffee
             - '!test/client/**/*.coffee'
-      node:
-        - preset: node
-          glob:
-            - '{src,test}/**/*.coffee'
-  keywords: null

@@ -19,8 +19,12 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "",
+  "exports": {
+    ".": {
+      "browser": "./build/browser/src/index.js"
+    }
+  },
   "files": [
-    "build/node/src",
     "build/browser/src"
   ],
   "scripts": {
