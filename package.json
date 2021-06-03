@@ -19,13 +19,6 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "",
-  "exports": {
-    ".": {
-      "node": "./build/node/src/index.js",
-      "browser": "./build/browser/src/index.js"
-    }
-  },
-  "main": "build/node/src/index.js",
   "files": [
     "build/node/src",
     "build/browser/src"
@@ -40,7 +33,7 @@
     "@dashkite/amen": "^0.1.2",
     "@dashkite/amen-console": "^0.0.1",
     "@dashkite/genie": "^0.5.2",
-    "@dashkite/genie-presets": "^0.2.1",
+    "@dashkite/genie-presets": "^0.2.2",
     "coffeescript": "^2.5.1"
   }
 }
