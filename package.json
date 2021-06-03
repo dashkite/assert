@@ -34,7 +34,7 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/joy": "^0.3.7"
+    "@dashkite/joy": "^0.3.8"
   },
   "devDependencies": {
     "@dashkite/amen": "^0.1.2",
