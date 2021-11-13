@@ -34,13 +34,13 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/joy": "^0.3.8"
+    "@dashkite/joy": "^0.3.16"
   },
   "devDependencies": {
     "@dashkite/amen": "^0.1.2",
     "@dashkite/amen-console": "^0.0.1",
-    "@dashkite/genie": "^0.5.2",
-    "@dashkite/genie-presets": "^0.2.2",
-    "coffeescript": "^2.5.1"
+    "@dashkite/genie": "^0.5.6",
+    "@dashkite/genie-presets": "^0.5.3",
+    "coffeescript": "^2.6.1"
   }
 }
