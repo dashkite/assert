@@ -53,6 +53,14 @@ do ->
         return true
       throw new Error "should throw"
 
+    test "expect", ->
+      await assert.expect -> Promise.resolve true
+      try
+        await assert.expect -> Promise.resolve false
+      catch error
+        return true
+      throw new Error "should throw"
+
 
 
   ]

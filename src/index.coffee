@@ -28,6 +28,8 @@ qx =
 
   doesNotReject: (f) -> ! await rejects f
 
+  expect: -> _.expect arguments...
+
 assert = (x, why = "assertion failed") ->
   if x == true then true else throw new Error why
 
