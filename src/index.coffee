@@ -33,6 +33,8 @@ qx =
 assert = (x, why = "assertion failed") ->
   if x == true then true else throw new Error why
 
+assert.expect = {}
+
 for name, f of px
   do (name, f) ->
     assert[ name ] = _.curry _.arity f.length,

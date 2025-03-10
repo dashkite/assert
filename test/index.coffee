@@ -61,8 +61,6 @@ do ->
         return true
       throw new Error "should throw"
 
-
-
   ]
 
   process.exit if success then 0 else 1
