@@ -8,22 +8,26 @@ px =
   deepEqual: _.equal
   notDeepEqual: _.negate _.equal
 
-  throws: throws = (f) ->
+  throws: throws = ( f, message ) ->
     try
       f()
-    catch
-      return true
+    catch error
+      return if message?
+        error.message == message
+      else true
     false
 
   doesNotThrow: _.negate throws
 
 qx =
 
-  rejects: rejects = (f) ->
+  rejects: rejects = ( f, message ) ->
     try
       await f()
     catch error
-      return true
+      return if message?
+        error.message == message
+      else true
     false
 
   doesNotReject: (f) -> ! await rejects f
@@ -37,12 +41,12 @@ assert.expect = {}
 
 for name, f of px
   do (name, f) ->
-    assert[ name ] = _.curry _.arity f.length,
+    assert[ name ] = _.arity f.length,
       (ax...) -> assert (_.apply f, ax), "assertion #{name} failed"
 
 for name, f of qx
   do (name, f) ->
-    assert[ name ] = _.curry _.arity f.length,
+    assert[ name ] = _.arity f.length,
       (ax...) -> assert (await _.apply f, ax), "assertion #{name} failed"
 
 export default assert
