@@ -36,7 +36,7 @@
     "release": "genie release"
   },
   "dependencies": {
-    "@dashkite/joy": "link:../joy"
+    "@dashkite/joy": "0.6.0"
   },
   "devDependencies": {
     "@dashkite/amen": "^0.1.2",
