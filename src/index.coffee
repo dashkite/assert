@@ -1,3 +1,7 @@
+# TODO 0.1.4 matched against arbitrary object for throws/rejects
+# (OR ... maybe it just ignored the 2nd argument?)
+# We need to reconcile that interface (or change tests that used it)
+
 import * as _ from "@dashkite/joy"
 
 px =
