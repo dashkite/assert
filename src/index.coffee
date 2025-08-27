@@ -15,11 +15,9 @@ px =
   throws: throws = ( f, message ) ->
     try
       f()
+      false
     catch error
-      return if message?
-        error.message == message
-      else true
-    false
+      !message? || ( error.message == message )
 
   doesNotThrow: _.negate throws
 
@@ -28,11 +26,9 @@ qx =
   rejects: rejects = ( f, message ) ->
     try
       await f()
+      false
     catch error
-      return if message?
-        error.message == message
-      else true
-    false
+      !message? || ( error.message == message )
 
   doesNotReject: (f) -> ! await rejects f
 
