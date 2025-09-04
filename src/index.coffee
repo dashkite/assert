@@ -4,6 +4,8 @@
 
 import * as _ from "@dashkite/joy"
 
+elide = _.elide 30, "..."
+
 px =
 
   equal: eq = (a, b) -> a == b
@@ -28,7 +30,11 @@ qx =
       await f()
       false
     catch error
-      !message? || ( error.message == message )
+      if ( !message? || ( error.message == message ))
+        true
+      else
+        throw new Error "expected '#{ elide message }',
+          got '#{ elide error.message }'"
 
   doesNotReject: (f) -> ! await rejects f
 
