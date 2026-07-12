@@ -2,13 +2,9 @@
 
 *Lightweight browser-friendly Javascript assertions.*
 
-```coffeescript
-assert isDefined foo
-assert.equal foo, bar
-assert.deepEqual foo, bar
-assert.throws -> throw "oh no"
-assert.rejects -> Promise.reject "oh no"
-```
+[![Hippocratic License HL3-CORE](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-CORE&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/core.html)
+
+Assert provides lightweight, browser-friendly Javascript assertions for developers. It offers a concise toolkit to ensure code correctness across multiple environments.
 
 ## Features
 
@@ -17,66 +13,25 @@ assert.rejects -> Promise.reject "oh no"
 - Curryable
 - Plain `assert` takes only `true` — no “truth” values
 
-## Install
+## Installation
 
 ```shell
-npm i @dashkite/assert
+pnpm install -D @dashkite/assert
 ```
 
-## Reference
+## Usage
 
-### assert
+```coffeescript
+assert isDefined foo
+assert.equal foo, bar
+assert.deepEqual foo, bar
+assert.throws -> throw "oh no"
+assert.rejects -> Promise.reject "oh no"
+```
 
-*assert condition → boolean*
+## Other Resources
 
-Returns `true` if *condition* is true, throws otherwise.
-
-### assert.equal
-
-*assert.equal expected, actual → boolean*
-
-Returns `true` if *expected* is strictly equal to *actual*, throws otherwise.
-
-### assert.notEqual
-
-*assert.notEqual expected, actual → boolean*
-
-Returns `true` if *expected* is strictly not equal to *actual*, throws otherwise.
-
-### assert.deepEqual
-
-*assert.deepEqual expected, actual → boolean*
-
-Returns `true` if *expected* is deep equal to *actual*, throws otherwise.
-
-### assert.notDeepEqual
-
-*assert.notDeepEqual expected, actual → boolean*
-
-Returns `true` if *expected* is not deep equal to *actual*, throws otherwise.
-
-### assert.throws
-
-*assert.throws function → boolean*
-
-Returns `true` if *function* throws, throws otherwise.
-
-### assert.doesNotThrow
-
-*assert.throws function → boolean*
-
-Returns `true` if *function* does not throw, throws otherwise.
-
-### assert.rejects
-
-*assert.rejects function → boolean*
-
-Returns `true` if *function* returns a promise that rejects, throws otherwise.
-
-### assert.doesNotReject
-
-*assert.rejects function → boolean*
-
-Returns `true` if *function* returns a promise that does not reject, throws otherwise.
-
-### 
+- [Reference](docs/reference.md)
+- [Recipes](docs/recipes.md)
+- [Technical Notes](docs/technical-notes.md)
+- [Testing](docs/testing.md)
